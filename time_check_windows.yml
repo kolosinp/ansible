@@ -1,0 +1,7 @@
+---
+- hosts: farma
+  tasks:
+  - name: Run an executable and send data to the stdin for the executable
+    win_command: powershell.exe Get-Date
+    register: result
+  - debug: msg="{{ result.stdout }}" 
